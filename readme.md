@@ -1,3 +1,14 @@
+# UI 
+## Register in one
+![Test Image 1](screenshot/onetime-register.png)
+## Student Registeration page
+![Test Image 1](screenshot/register-part.png)
+## Login page
+![Test Image 1](screenshot/login.png)
+## Add Domain page
+![Test Image 1](screenshot/priority.png)
+## Welcome page
+![Test Image 1](screenshot/welcomeMsg.png)
 # Top priority categories
 SELECT cid,SUM(priority) AS pr FROM `spark_priorities` GROUP by cid ORDER BY pr DESC;
 
