@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2021 at 09:46 AM
+-- Generation Time: Dec 01, 2021 at 02:27 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -31,6 +31,7 @@ CREATE TABLE `spark_students` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `whatsapp` bigint(20) NOT NULL,
   `class` varchar(50) NOT NULL,
   `semester` int(11) NOT NULL,

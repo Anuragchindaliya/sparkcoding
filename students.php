@@ -49,7 +49,6 @@
             -ms-user-select: none;
             user-select: none;
         }
-
         a {
             text-decoration: none;
         }
@@ -67,7 +66,6 @@
 </head>
 
 <body>
-
     <h2 clas>AI For Ranking</h2>
     <!-- <div class="mb-1 btngroup">
         <a class="btn btn-primary" href="home.php?filter=1">First</a>
@@ -88,23 +86,22 @@
             $filter = -$_GET["filter"];
         }
         // $sql = "SELECT cat.category as category_name ,SUM(prior.priority) as totalpr FROM `spark_priorities` AS prior JOIN spark_categories AS cat ON prior.cid = cat.id WHERE prior.priority = '$filter' GROUP BY cid ORDER BY totalpr";
-        $sql = "SELECT stu.id, name,email, GROUP_CONCAT(category) as priority FROM `spark_students` AS stu JOIN spark_priorities AS prior ON stu.id = prior.sid JOIN spark_categories AS cat ON prior.cid = cat.id GROUP BY id";
+        $sql = "SELECT stu.id, name,email, GROUP_CONCAT(category) as priority FROM `spark_students` AS stu JOIN spark_priorities AS prior ON stu.id = prior.sid JOIN spark_categories AS cat ON prior.cid = cat.id GROUP BY id ORDER BY id DESC";
         $res = mysqli_query($conn, $sql);
+        $varId = 1;
+
         foreach ($res as $row) {
         ?>
             <tr>
-                <td><?= $row["id"] ?></td>
+                <td><?= $varId ?></td>
                 <td><?= $row["name"] ?></td>
                 <td><?= $row["email"] ?></td>
                 <td><?= $row["priority"] ?></td>
             </tr>
-        <?php
+        <?php $varId++;
         }
-
         ?>
-
     </table>
-
 </body>
 
 </html>
